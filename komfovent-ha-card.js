@@ -46,10 +46,11 @@ class KomfoventDomektCard extends HTMLElement {
           background: var(--ha-card-background, var(--card-background-color, #fff));
           border-radius: var(--ha-card-border-radius, 12px);
         }
-        .content { padding: 14px 18px 22px; }
+        .content { padding: 8px 10px 10px; }
         .diagram-wrap {
           position: relative;
-          width: min(100%, 440px);
+          width: 100%;
+          max-width: 520px;
           margin: 0 auto;
         }
         .diagram {
@@ -84,7 +85,7 @@ class KomfoventDomektCard extends HTMLElement {
         }
         .label { fill: var(--secondary-text-color, #92999e); font-size: 16px; }
         .reading { fill: var(--primary-text-color, #555b60); font-size: 21px; font-weight: 500; }
-        .flow-reading { font-size: 20px; font-weight: 600; }
+        .flow-reading { font-size: 16px; font-weight: 600; }
         .house, .floor, .core {
           fill: none;
           stroke: #d7dde5;
@@ -97,7 +98,7 @@ class KomfoventDomektCard extends HTMLElement {
         .fresh { stroke: #43b4f5; }
         .used { stroke: #ff9b24; }
         .heater-badge {
-          fill: var(--ha-card-background, var(--card-background-color, #fff));
+          fill: none;
           stroke: #ff5964;
           stroke-width: 1.5;
         }
@@ -114,12 +115,12 @@ class KomfoventDomektCard extends HTMLElement {
         .metrics {
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 6px;
-          margin-top: 4px;
+          gap: 2px;
+          margin-top: 0;
         }
         .metric {
           min-width: 0;
-          padding: 8px 2px 3px;
+          padding: 4px 1px 1px;
           text-align: center;
         }
         .metric-icon {
@@ -130,26 +131,27 @@ class KomfoventDomektCard extends HTMLElement {
           color: var(--primary-color, #315d96);
           --mdc-icon-size: 100%;
         }
-        .metric-label { color: var(--secondary-text-color, #92999e); font-size: 14px; }
+        .metric-label { color: var(--secondary-text-color, #92999e); font-size: 12px; }
         .metric-value {
-          margin-top: 2px;
+          margin-top: 1px;
           color: var(--primary-text-color, #555b60);
-          font-size: 19px;
+          font-size: 16px;
           font-weight: 600;
           overflow-wrap: anywhere;
         }
         @media (max-width: 380px) {
-          .content { padding: 10px 8px 16px; }
-          .metric-label { font-size: 12px; }
-          .metric-value { font-size: 16px; }
+          .content { padding: 8px 6px 10px; }
+          .flow-reading { font-size: 14px; }
+          .metric-label { font-size: 11px; }
+          .metric-value { font-size: 15px; }
         }
       </style>
       <ha-card>
         <div class="content">
           <div class="diagram-wrap">
-            <svg class="diagram" viewBox="0 0 440 730" role="img" aria-label="Komfovent airflow diagram">
-              <path class="house" d="M28 680V250L220 76 412 250V680"/>
-              <path class="floor" d="M8 680H432"/>
+            <svg class="diagram" viewBox="0 30 440 640" role="img" aria-label="Komfovent airflow diagram">
+              <path class="house" d="M28 650V250L220 76 412 250V650"/>
+              <path class="floor" d="M8 650H432"/>
 
               <path class="air fresh" d="M115 120L170 174V258L220 309"/>
               <path class="air fresh" d="M220 309L270 258V174L325 120"/>
@@ -173,26 +175,26 @@ class KomfoventDomektCard extends HTMLElement {
               <text class="label" x="358" y="54" data-label="label_exhaust">Exhaust</text>
               <text class="reading" x="358" y="80" data-value="exhaust_temperature">--</text>
 
-              <text class="reading flow-reading" x="70" y="346" data-value="extract_flow">--</text>
-              <text class="reading flow-reading" x="370" y="346" data-value="supply_flow">--</text>
+              <text class="reading flow-reading" x="88" y="346" data-value="extract_flow">--</text>
+              <text class="reading flow-reading" x="352" y="346" data-value="supply_flow">--</text>
 
-              <text class="label" x="110" y="515" data-label="label_extract">Extract</text>
-              <text class="reading" x="110" y="541" data-value="extract_temperature">--</text>
-              <text class="label" x="330" y="515" data-label="label_supply">Supply</text>
-              <text class="reading" x="330" y="541" data-value="supply_temperature">--</text>
+              <text class="label" x="110" y="495" data-label="label_extract">Extract</text>
+              <text class="reading" x="110" y="521" data-value="extract_temperature">--</text>
+              <text class="label" x="330" y="495" data-label="label_supply">Supply</text>
+              <text class="reading" x="330" y="521" data-value="supply_temperature">--</text>
 
-              <text class="label" x="100" y="615" data-label="label_panel">Panel</text>
-              <text class="reading" x="100" y="640" data-value="panel_temperature">--</text>
-              <text class="label" x="220" y="615" data-label="label_humidity">Humidity</text>
-              <text class="reading" x="220" y="640" data-value="humidity">--</text>
-              <text class="label" x="340" y="615" data-label="label_air_quality">Air quality</text>
-              <text class="reading" x="340" y="640" data-value="air_quality">--</text>
+              <text class="label" x="100" y="590" data-label="label_panel">Panel</text>
+              <text class="reading" x="100" y="615" data-value="panel_temperature">--</text>
+              <text class="label" x="220" y="590" data-label="label_humidity">Humidity</text>
+              <text class="reading" x="220" y="615" data-value="humidity">--</text>
+              <text class="label" x="340" y="590" data-label="label_air_quality">Air quality</text>
+              <text class="reading" x="340" y="615" data-value="air_quality">--</text>
             </svg>
-            <ha-icon class="diagram-icon fan-icon" style="left:32.5%;top:45.9%" icon="mdi:fan" aria-hidden="true"></ha-icon>
-            <ha-icon class="diagram-icon fan-icon" style="left:67.5%;top:45.9%" icon="mdi:fan" aria-hidden="true"></ha-icon>
-            <ha-icon class="diagram-icon" style="left:22.7%;top:80%" icon="mdi:thermometer" aria-hidden="true"></ha-icon>
-            <ha-icon class="diagram-icon" style="left:50%;top:80%" icon="mdi:water-percent" aria-hidden="true"></ha-icon>
-            <ha-icon class="diagram-icon" style="left:77.3%;top:80%" icon="mdi:leaf" aria-hidden="true"></ha-icon>
+            <ha-icon class="diagram-icon fan-icon" style="left:32.5%;top:47.7%" icon="mdi:fan" aria-hidden="true"></ha-icon>
+            <ha-icon class="diagram-icon fan-icon" style="left:67.5%;top:47.7%" icon="mdi:fan" aria-hidden="true"></ha-icon>
+            <ha-icon class="diagram-icon" style="left:22.7%;top:82.8%" icon="mdi:thermometer" aria-hidden="true"></ha-icon>
+            <ha-icon class="diagram-icon" style="left:50%;top:82.8%" icon="mdi:water-percent" aria-hidden="true"></ha-icon>
+            <ha-icon class="diagram-icon" style="left:77.3%;top:82.8%" icon="mdi:leaf" aria-hidden="true"></ha-icon>
           </div>
 
           <div class="metrics">
