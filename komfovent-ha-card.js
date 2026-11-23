@@ -70,9 +70,14 @@ class KomfoventDomektCard extends HTMLElement {
         .fan-icon {
           width: 6.5%;
         }
-        .heater-icon {
-          color: #ff5964;
+        .heater-symbol {
+          fill: none;
+          stroke: #ff5964;
+          stroke-width: 2;
+          stroke-linecap: round;
+          stroke-linejoin: round;
         }
+        .arrowhead { stroke: var(--ha-card-background, var(--card-background-color, #fff)); stroke-width: 2.5; stroke-linejoin: round; }
         svg text {
           font-family: inherit;
           text-anchor: middle;
@@ -142,7 +147,7 @@ class KomfoventDomektCard extends HTMLElement {
       <ha-card>
         <div class="content">
           <div class="diagram-wrap">
-            <svg class="diagram" viewBox="0 0 440 730" role="img" aria-label="Schemat przepływu powietrza przez centralę">
+            <svg class="diagram" viewBox="0 0 440 730" role="img" aria-label="Komfovent airflow diagram">
               <path class="house" d="M28 680V250L220 76 412 250V680"/>
               <path class="floor" d="M8 680H432"/>
 
@@ -150,37 +155,41 @@ class KomfoventDomektCard extends HTMLElement {
               <path class="air fresh" d="M220 309L270 258V174L325 120"/>
               <path class="air used" d="M115 475L170 420V365L220 313"/>
               <path class="air used" d="M220 313L270 365V420L325 475"/>
-              <path d="M170 174l-12-25-13 13zM325 120l-11 25-14-14z" fill="#43b4f5"/>
-              <path d="M170 420l-11 25-14-14zM325 475l-11-25-14 14z" fill="#ff9b24"/>
+              <path class="arrowhead" d="M170 174L146 168L162 150Z M325 120L317 143L301 127Z" fill="#43b4f5"/>
+              <path class="arrowhead" d="M170 420L162 444L146 428Z M325 475L301 467L317 451Z" fill="#ff9b24"/>
 
               <rect class="core" x="125" y="215" width="190" height="155"/>
-              <rect class="heater-badge" x="321" y="270" width="82" height="58" rx="7"/>
-              <text class="heater-label" x="352" y="288" data-label="label_heater">Grzałka</text>
-              <text class="reading heater-reading" x="352" y="311" data-value="heater_power">--</text>
+              <g class="heater-symbol" transform="translate(277 278)" aria-hidden="true">
+                <path d="M6 8C3 6 9 4 6 2M14 8C11 6 17 4 14 2M22 8C19 6 25 4 22 2"/>
+                <rect x="1" y="12" width="25" height="12" rx="1.5"/>
+                <path d="M7 13v10M13.5 13v10M20 13v10M5 27v-3M22 27v-3"/>
+              </g>
+              <rect class="heater-badge" x="321" y="270" width="93" height="58" rx="7"/>
+              <text class="heater-label" x="330" y="288" data-label="label_heater">Heater</text>
+              <text class="reading heater-reading" x="330" y="311" data-value="heater_power">--</text>
 
-              <text class="label" x="82" y="54" data-label="label_outside">Czerpnia</text>
+              <text class="label" x="82" y="54" data-label="label_outside">Fresh air</text>
               <text class="reading" x="82" y="80" data-value="outside_temperature">--</text>
-              <text class="label" x="358" y="54" data-label="label_exhaust">Wyrzutnia</text>
+              <text class="label" x="358" y="54" data-label="label_exhaust">Exhaust</text>
               <text class="reading" x="358" y="80" data-value="exhaust_temperature">--</text>
 
               <text class="reading flow-reading" x="70" y="346" data-value="extract_flow">--</text>
               <text class="reading flow-reading" x="370" y="346" data-value="supply_flow">--</text>
 
-              <text class="label" x="110" y="515" data-label="label_extract">Wywiew</text>
+              <text class="label" x="110" y="515" data-label="label_extract">Extract</text>
               <text class="reading" x="110" y="541" data-value="extract_temperature">--</text>
-              <text class="label" x="330" y="515" data-label="label_supply">Nawiew</text>
+              <text class="label" x="330" y="515" data-label="label_supply">Supply</text>
               <text class="reading" x="330" y="541" data-value="supply_temperature">--</text>
 
               <text class="label" x="100" y="615" data-label="label_panel">Panel</text>
               <text class="reading" x="100" y="640" data-value="panel_temperature">--</text>
-              <text class="label" x="220" y="615" data-label="label_humidity">Wilgotność</text>
+              <text class="label" x="220" y="615" data-label="label_humidity">Humidity</text>
               <text class="reading" x="220" y="640" data-value="humidity">--</text>
-              <text class="label" x="340" y="615" data-label="label_air_quality">Jakość</text>
+              <text class="label" x="340" y="615" data-label="label_air_quality">Air quality</text>
               <text class="reading" x="340" y="640" data-value="air_quality">--</text>
             </svg>
             <ha-icon class="diagram-icon fan-icon" style="left:32.5%;top:45.9%" icon="mdi:fan" aria-hidden="true"></ha-icon>
             <ha-icon class="diagram-icon fan-icon" style="left:67.5%;top:45.9%" icon="mdi:fan" aria-hidden="true"></ha-icon>
-            <ha-icon class="diagram-icon heater-icon" style="left:76.8%;top:40.1%" icon="mdi:radiator" aria-hidden="true"></ha-icon>
             <ha-icon class="diagram-icon" style="left:22.7%;top:80%" icon="mdi:thermometer" aria-hidden="true"></ha-icon>
             <ha-icon class="diagram-icon" style="left:50%;top:80%" icon="mdi:water-percent" aria-hidden="true"></ha-icon>
             <ha-icon class="diagram-icon" style="left:77.3%;top:80%" icon="mdi:leaf" aria-hidden="true"></ha-icon>
@@ -189,17 +198,17 @@ class KomfoventDomektCard extends HTMLElement {
           <div class="metrics">
             <div class="metric">
               <ha-icon class="metric-icon" icon="mdi:autorenew" aria-hidden="true"></ha-icon>
-              <div class="metric-label" data-label="label_heat_recovery">Odzysk ciepła</div>
+              <div class="metric-label" data-label="label_heat_recovery">Heat recovery</div>
               <div class="metric-value" data-value="heat_recovery">--</div>
             </div>
             <div class="metric">
               <ha-icon class="metric-icon" icon="mdi:flash" aria-hidden="true"></ha-icon>
-              <div class="metric-label" data-label="label_power">Pobór prądu</div>
+              <div class="metric-label" data-label="label_power">Power consumption</div>
               <div class="metric-value" data-value="power">--</div>
             </div>
             <div class="metric">
               <ha-icon class="metric-icon" icon="mdi:air-filter" aria-hidden="true"></ha-icon>
-              <div class="metric-label" data-label="label_filter">Filtry</div>
+              <div class="metric-label" data-label="label_filter">Filters</div>
               <div class="metric-value" data-value="filter">--</div>
             </div>
           </div>
@@ -211,7 +220,8 @@ class KomfoventDomektCard extends HTMLElement {
       node.textContent = this._value(this._config[node.dataset.value]);
     });
     this.shadowRoot.querySelectorAll("[data-label]").forEach((node) => {
-      node.textContent = this._config[node.dataset.label] || DEFAULT_LABELS[node.dataset.label];
+      const label = this._config[node.dataset.label];
+      node.textContent = typeof label === "string" ? label : DEFAULT_LABELS[node.dataset.label];
     });
   }
 
@@ -225,47 +235,47 @@ class KomfoventDomektCard extends HTMLElement {
 }
 
 const ENTITY_FIELDS = [
-  ["outside_temperature", "Temperatura czerpni"],
-  ["exhaust_temperature", "Temperatura wyrzutni"],
-  ["extract_temperature", "Temperatura wywiewu"],
-  ["supply_temperature", "Temperatura nawiewu"],
-  ["extract_flow", "Przepływ wywiewu"],
-  ["supply_flow", "Przepływ nawiewu"],
-  ["panel_temperature", "Temperatura panelu"],
-  ["humidity", "Wilgotność"],
-  ["air_quality", "Jakość powietrza"],
-  ["heat_recovery", "Odzysk ciepła"],
-  ["power", "Pobór prądu"],
-  ["heater_power", "Pobór prądu grzałki"],
-  ["filter", "Stan filtrów"],
+  ["outside_temperature", "Fresh-air temperature"],
+  ["exhaust_temperature", "Exhaust-air temperature"],
+  ["extract_temperature", "Extract-air temperature"],
+  ["supply_temperature", "Supply-air temperature"],
+  ["extract_flow", "Extract airflow"],
+  ["supply_flow", "Supply airflow"],
+  ["panel_temperature", "Panel temperature"],
+  ["humidity", "Humidity"],
+  ["air_quality", "Air quality"],
+  ["heat_recovery", "Heat recovery"],
+  ["power", "Power consumption"],
+  ["heater_power", "Heater power consumption"],
+  ["filter", "Filter status"],
 ];
 
 const DEFAULT_LABELS = {
-  label_outside: "Czerpnia",
-  label_exhaust: "Wyrzutnia",
-  label_extract: "Wywiew",
-  label_supply: "Nawiew",
+  label_outside: "Fresh air",
+  label_exhaust: "Exhaust",
+  label_extract: "Extract",
+  label_supply: "Supply",
   label_panel: "Panel",
-  label_humidity: "Wilgotność",
-  label_air_quality: "Jakość",
-  label_heater: "Grzałka",
-  label_heat_recovery: "Odzysk ciepła",
-  label_power: "Pobór prądu",
-  label_filter: "Filtry",
+  label_humidity: "Humidity",
+  label_air_quality: "Air quality",
+  label_heater: "Heater",
+  label_heat_recovery: "Heat recovery",
+  label_power: "Power consumption",
+  label_filter: "Filters",
 };
 
 const LABEL_FIELDS = [
-  ["label_outside", "Napis: czerpnia"],
-  ["label_exhaust", "Napis: wyrzutnia"],
-  ["label_extract", "Napis: wywiew"],
-  ["label_supply", "Napis: nawiew"],
-  ["label_panel", "Napis: panel"],
-  ["label_humidity", "Napis: wilgotność"],
-  ["label_air_quality", "Napis: jakość powietrza"],
-  ["label_heater", "Napis: grzałka"],
-  ["label_heat_recovery", "Napis: odzysk ciepła"],
-  ["label_power", "Napis: pobór prądu"],
-  ["label_filter", "Napis: filtry"],
+  ["label_outside", "Card label: fresh air"],
+  ["label_exhaust", "Card label: exhaust"],
+  ["label_extract", "Card label: extract"],
+  ["label_supply", "Card label: supply"],
+  ["label_panel", "Card label: panel"],
+  ["label_humidity", "Card label: humidity"],
+  ["label_air_quality", "Card label: air quality"],
+  ["label_heater", "Card label: heater"],
+  ["label_heat_recovery", "Card label: heat recovery"],
+  ["label_power", "Card label: power consumption"],
+  ["label_filter", "Card label: filters"],
 ];
 
 class KomfoventDomektCardEditor extends HTMLElement {
@@ -293,7 +303,7 @@ class KomfoventDomektCardEditor extends HTMLElement {
         :host { display: block; }
         p { margin: 0 0 12px; color: var(--secondary-text-color); }
       </style>
-      <p>Wybierz encje czujników i opcjonalnie zmień napisy karty na własny język.</p>
+      <p>Select sensor entities and set the card labels in your preferred language. Clear a label to hide it.</p>
       <ha-form></ha-form>
     `;
 

@@ -5,12 +5,12 @@
 
     <path d="M160 180L230 250V368L300 430M300 430L370 368V250L440 180" fill="none" stroke="#43b4f5" stroke-width="14" stroke-linecap="square" stroke-linejoin="round"/>
     <path d="M160 600L230 530V492L300 435M300 435L370 492V530L440 600" fill="none" stroke="#ff9b24" stroke-width="14" stroke-linecap="square" stroke-linejoin="round"/>
-    <path d="M230 250l-4 28 28-4zM440 180l-20 24 28 4z" fill="#43b4f5"/>
-    <path d="M230 530l-4-28-28 4zM440 600l-28-4 4-28z" fill="#ff9b24"/>
+    <path d="M230 250l-4 28 28-4zM440 180l-20 24 28 4z" fill="#43b4f5" stroke="#1b1b1b" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M230 530l-4-28-28 4zM440 600l-28-4 4-28z" fill="#ff9b24" stroke="#1b1b1b" stroke-width="2.5" stroke-linejoin="round"/>
 
-    <text x="110" y="74" fill="#c5ccd3" font-size="21">Czerpnia</text>
+    <text x="110" y="74" fill="#c5ccd3" font-size="21">Fresh air</text>
     <text x="110" y="107" fill="#f5f7fa" font-size="28">2.8 °C</text>
-    <text x="490" y="74" fill="#c5ccd3" font-size="21">Wyrzutnia</text>
+    <text x="490" y="74" fill="#c5ccd3" font-size="21">Exhaust</text>
     <text x="490" y="107" fill="#f5f7fa" font-size="28">7.2 °C</text>
 
     <rect x="170" y="310" width="260" height="210" fill="none" stroke="#d7dde5" stroke-width="6"/>
@@ -21,15 +21,20 @@
       <path d="M400 473v24M388 485h24M392 477l16 16M408 477l-16 16"/>
     </g>
     <rect x="444" y="378" width="96" height="68" rx="10" fill="#1b1b1b" stroke="#ff5964" stroke-width="2"/>
-    <text x="492" y="405" fill="#ff5964" font-size="16">♨ Grzałka</text>
+    <g transform="translate(380 340)" fill="none" stroke="#ff5964" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 10C3 8 9 6 6 4M14 10C11 8 17 6 14 4M22 10C19 8 25 6 22 4"/>
+      <rect x="1" y="14" width="25" height="12" rx="1.5"/>
+      <path d="M7 15v10M13.5 15v10M20 15v10M5 29v-3M22 29v-3"/>
+    </g>
+    <text x="492" y="405" fill="#ff5964" font-size="16">Heater</text>
     <text x="492" y="431" fill="#f5f7fa" font-size="21" font-weight="bold">250 W</text>
 
     <text x="96" y="476" fill="#f5f7fa" font-size="26" font-weight="bold">138 m³/h</text>
     <text x="504" y="476" fill="#f5f7fa" font-size="26" font-weight="bold">159 m³/h</text>
 
-    <text x="150" y="660" fill="#c5ccd3" font-size="21">Wywiew</text>
+    <text x="150" y="660" fill="#c5ccd3" font-size="21">Extract</text>
     <text x="150" y="694" fill="#f5f7fa" font-size="28">19.1 °C</text>
-    <text x="450" y="660" fill="#c5ccd3" font-size="21">Nawiew</text>
+    <text x="450" y="660" fill="#c5ccd3" font-size="21">Supply</text>
     <text x="450" y="694" fill="#f5f7fa" font-size="28">18.0 °C</text>
 
     <g fill="#56b8ff" font-size="30">
@@ -39,8 +44,8 @@
     </g>
     <g fill="#c5ccd3" font-size="20">
       <text x="150" y="812">Panel</text>
-      <text x="300" y="812">Wilgotność</text>
-      <text x="450" y="812">Jakość</text>
+      <text x="300" y="812">Humidity</text>
+      <text x="450" y="812">Air quality</text>
     </g>
     <g fill="#f5f7fa" font-size="26" font-weight="bold">
       <text x="150" y="846">23.7 °C</text>
@@ -54,9 +59,9 @@
       <text x="450" y="932">▤</text>
     </g>
     <g fill="#c5ccd3" font-size="17">
-      <text x="150" y="958">Odzysk ciepła</text>
-      <text x="300" y="958">Pobór prądu</text>
-      <text x="450" y="958">Filtry</text>
+      <text x="150" y="958">Heat recovery</text>
+      <text x="300" y="958">Power consumption</text>
+      <text x="450" y="958">Filters</text>
     </g>
   </g>
 </svg>

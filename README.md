@@ -10,7 +10,7 @@ Customizable Home Assistant Lovelace card for visualizing airflow through Komfov
 - Configurable temperature, airflow, humidity, air-quality, filter, heat-recovery, and power entities.
 - Separate heater power readout.
 - Visual editor for entity selection and custom labels.
-- Labels default to Polish and can be changed to any language.
+- Labels default to English and can be changed to any language in the visual editor.
 - Uses the Home Assistant theme and Material Design icons.
 
 ## Installation with HACS
@@ -53,7 +53,7 @@ The entity IDs above are examples. Values and units are read from the selected e
 
 ### Custom labels
 
-Change labels in the visual editor, or override them in YAML. For example:
+The visual editor includes a text field for every label on the card. Enter any language, or clear a field to hide that label. You can also override labels in YAML:
 
 ```yaml
 label_outside: Outside
