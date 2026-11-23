@@ -5,8 +5,8 @@
 
     <path d="M160 180L230 250V368L300 430M300 430L370 368V250L440 180" fill="none" stroke="#43b4f5" stroke-width="14" stroke-linecap="square" stroke-linejoin="round"/>
     <path d="M160 600L230 530V492L300 435M300 435L370 492V530L440 600" fill="none" stroke="#ff9b24" stroke-width="14" stroke-linecap="square" stroke-linejoin="round"/>
-    <path d="M230 250l-4 28 28-4zM440 180l-20 24 28 4z" fill="#43b4f5" stroke="#1b1b1b" stroke-width="2.5" stroke-linejoin="round"/>
-    <path d="M230 530l-4-28-28 4zM440 600l-28-4 4-28z" fill="#ff9b24" stroke="#1b1b1b" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M230 250L200 238L218 221ZM440 180L428 210L410 192Z" fill="#43b4f5" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M230 530L218 560L201 543ZM440 600L410 588L428 571Z" fill="#ff9b24" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
 
     <text x="110" y="74" fill="#c5ccd3" font-size="21">Fresh air</text>
     <text x="110" y="107" fill="#f5f7fa" font-size="28">2.8 °C</text>
@@ -14,14 +14,20 @@
     <text x="490" y="107" fill="#f5f7fa" font-size="28">7.2 °C</text>
 
     <rect x="170" y="310" width="260" height="210" fill="none" stroke="#d7dde5" stroke-width="6"/>
-    <g fill="none" stroke="#56b8ff" stroke-width="4" stroke-linecap="round">
-      <circle cx="200" cy="485" r="15"/>
-      <path d="M200 473v24M188 485h24M192 477l16 16M208 477l-16 16"/>
-      <circle cx="400" cy="485" r="15"/>
-      <path d="M400 473v24M388 485h24M392 477l16 16M408 477l-16 16"/>
+    <g transform="translate(200 485)" fill="#56b8ff">
+      <path d="M0-2C-5-7-5-13-2-18C3-14 4-8 2-2Z"/>
+      <path transform="rotate(120)" d="M0-2C-5-7-5-13-2-18C3-14 4-8 2-2Z"/>
+      <path transform="rotate(240)" d="M0-2C-5-7-5-13-2-18C3-14 4-8 2-2Z"/>
+      <circle r="2.5"/>
+    </g>
+    <g transform="translate(400 485)" fill="#56b8ff">
+      <path d="M0-2C-5-7-5-13-2-18C3-14 4-8 2-2Z"/>
+      <path transform="rotate(120)" d="M0-2C-5-7-5-13-2-18C3-14 4-8 2-2Z"/>
+      <path transform="rotate(240)" d="M0-2C-5-7-5-13-2-18C3-14 4-8 2-2Z"/>
+      <circle r="2.5"/>
     </g>
     <rect x="444" y="378" width="96" height="68" rx="10" fill="#1b1b1b" stroke="#ff5964" stroke-width="2"/>
-    <g transform="translate(380 340)" fill="none" stroke="#ff5964" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(375 337) scale(1.3)" fill="none" stroke="#ff5964" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M6 10C3 8 9 6 6 4M14 10C11 8 17 6 14 4M22 10C19 8 25 6 22 4"/>
       <rect x="1" y="14" width="25" height="12" rx="1.5"/>
       <path d="M7 15v10M13.5 15v10M20 15v10M5 29v-3M22 29v-3"/>
@@ -37,10 +43,10 @@
     <text x="450" y="660" fill="#c5ccd3" font-size="21">Supply</text>
     <text x="450" y="694" fill="#f5f7fa" font-size="28">18.0 °C</text>
 
-    <g fill="#56b8ff" font-size="30">
-      <text x="150" y="775">♨</text>
-      <text x="300" y="775">◌</text>
-      <text x="450" y="775">❧</text>
+    <g fill="none" stroke="#56b8ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M147 776V762a3 3 0 0 1 6 0v14a7 7 0 1 1-6 0z"/>
+      <path d="M300 758c-4 6-8 11-8 15a8 8 0 0 0 16 0c0-4-4-9-8-15z"/>
+      <path d="M439 778c1-11 8-17 21-18-1 13-8 19-21 20zM440 779l14-14"/>
     </g>
     <g fill="#c5ccd3" font-size="20">
       <text x="150" y="812">Panel</text>
@@ -53,10 +59,11 @@
       <text x="450" y="846">-- ppm</text>
     </g>
 
-    <g fill="#56b8ff" font-size="29">
-      <text x="150" y="932">↻</text>
-      <text x="300" y="932">ϟ</text>
-      <text x="450" y="932">▤</text>
+    <g fill="none" stroke="#56b8ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M139 930a12 12 0 0 1 20-8l2 2M161 922v7h-7M161 934a12 12 0 0 1-20 8l-2-2M139 942v-7h7"/>
+      <path d="M301 915l-9 16h8l-3 15 13-20h-8l4-11z" fill="#56b8ff" stroke="none"/>
+      <rect x="438" y="920" width="24" height="22" rx="2"/>
+      <path d="M443 926h14M443 932h14M443 938h14"/>
     </g>
     <g fill="#c5ccd3" font-size="17">
       <text x="150" y="958">Heat recovery</text>
