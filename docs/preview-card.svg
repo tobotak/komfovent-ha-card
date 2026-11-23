@@ -8,10 +8,10 @@
     <path d="M230 250L200 238L218 221ZM440 180L428 210L410 192Z" fill="#43b4f5" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
     <path d="M230 530L218 560L201 543ZM440 600L410 588L428 571Z" fill="#ff9b24" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
 
-    <text x="110" y="74" fill="#c5ccd3" font-size="20">Fresh air</text>
-    <text x="110" y="107" fill="#f5f7fa" font-size="26" font-weight="bold">2.8 °C</text>
-    <text x="490" y="74" fill="#c5ccd3" font-size="20">Exhaust</text>
-    <text x="490" y="107" fill="#f5f7fa" font-size="26" font-weight="bold">7.2 °C</text>
+    <text x="74" y="190" fill="#c5ccd3" font-size="20">Fresh air</text>
+    <text x="74" y="220" fill="#f5f7fa" font-size="26" font-weight="bold">2.8 °C</text>
+    <text x="526" y="190" fill="#c5ccd3" font-size="20">Exhaust</text>
+    <text x="526" y="220" fill="#f5f7fa" font-size="26" font-weight="bold">7.2 °C</text>
 
     <rect x="170" y="310" width="260" height="210" fill="none" stroke="#d7dde5" stroke-width="6"/>
     <g transform="translate(200 485)" fill="#56b8ff">
@@ -38,8 +38,8 @@
     <path d="M230 320v-8l-9 9 9 9v-7c5 0 9 4 9 9 0 2-.5 3.8-1.5 5.3l4.4 4.4A15 15 0 0 0 245 332c0-8.3-6.7-15-15-15zm0 24c-5 0-9-4-9-9 0-2 .5-3.8 1.5-5.3l-4.4-4.4A15 15 0 0 0 215 332c0 8.3 6.7 15 15 15v7l9-9-9-9z" fill="#43b4f5" transform="translate(70 45)"/>
     <text x="300" y="348" fill="#f5f7fa" font-size="26" font-weight="bold">78 %</text>
 
-    <text x="120" y="476" fill="#f5f7fa" font-size="26" font-weight="bold">138 m³/h</text>
-    <text x="480" y="476" fill="#f5f7fa" font-size="26" font-weight="bold">159 m³/h</text>
+    <text x="120" y="566" fill="#f5f7fa" font-size="26" font-weight="bold">138 m³/h</text>
+    <text x="480" y="566" fill="#f5f7fa" font-size="26" font-weight="bold">159 m³/h</text>
 
     <text x="150" y="660" fill="#c5ccd3" font-size="20">Extract</text>
     <text x="150" y="694" fill="#f5f7fa" font-size="26" font-weight="bold">19.1 °C</text>

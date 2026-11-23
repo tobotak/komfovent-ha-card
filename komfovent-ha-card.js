@@ -144,13 +144,13 @@ class KomfoventDomektCard extends HTMLElement {
               <text class="reading heater-reading" x="330" y="311" data-value="heater_power">--</text>
 
               <text class="reading recovery-reading" x="220" y="252" data-value="heat_recovery">--</text>
-              <text class="label" x="82" y="54" data-label="label_outside">Fresh air</text>
-              <text class="reading" x="82" y="80" data-value="outside_temperature">--</text>
-              <text class="label" x="358" y="54" data-label="label_exhaust">Exhaust</text>
-              <text class="reading" x="358" y="80" data-value="exhaust_temperature">--</text>
+              <text class="label" x="54" y="160" data-label="label_outside">Fresh air</text>
+              <text class="reading" x="54" y="186" data-value="outside_temperature">--</text>
+              <text class="label" x="386" y="160" data-label="label_exhaust">Exhaust</text>
+              <text class="reading" x="386" y="186" data-value="exhaust_temperature">--</text>
 
-              <text class="reading flow-reading" x="88" y="346" data-value="extract_flow">--</text>
-              <text class="reading flow-reading" x="352" y="346" data-value="supply_flow">--</text>
+              <text class="reading flow-reading" x="88" y="420" data-value="extract_flow">--</text>
+              <text class="reading flow-reading" x="352" y="420" data-value="supply_flow">--</text>
 
               <text class="label" x="110" y="495" data-label="label_extract">Extract</text>
               <text class="reading" x="110" y="521" data-value="extract_temperature">--</text>
