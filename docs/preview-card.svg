@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="980" viewBox="0 0 600 980">
-  <rect width="600" height="980" rx="18" fill="#1b1b1b"/>
-  <g font-family="Arial, sans-serif" text-anchor="middle">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="870" viewBox="0 0 600 870">
+  <rect width="600" height="870" rx="18" fill="#1b1b1b"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle" transform="translate(0 -30)">
     <path d="M48 886V350L300 112 552 350V886M24 886H576" fill="none" stroke="#d7dde5" stroke-width="12" stroke-linejoin="round"/>
 
     <path d="M160 180L230 250V368L300 430M300 430L370 368V250L440 180" fill="none" stroke="#43b4f5" stroke-width="14" stroke-linecap="square" stroke-linejoin="round"/>
@@ -8,10 +8,10 @@
     <path d="M230 250L200 238L218 221ZM440 180L428 210L410 192Z" fill="#43b4f5" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
     <path d="M230 530L218 560L201 543ZM440 600L410 588L428 571Z" fill="#ff9b24" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
 
-    <text x="110" y="74" fill="#c5ccd3" font-size="21">Fresh air</text>
-    <text x="110" y="107" fill="#f5f7fa" font-size="28">2.8 °C</text>
-    <text x="490" y="74" fill="#c5ccd3" font-size="21">Exhaust</text>
-    <text x="490" y="107" fill="#f5f7fa" font-size="28">7.2 °C</text>
+    <text x="110" y="74" fill="#c5ccd3" font-size="20">Fresh air</text>
+    <text x="110" y="107" fill="#f5f7fa" font-size="26" font-weight="bold">2.8 °C</text>
+    <text x="490" y="74" fill="#c5ccd3" font-size="20">Exhaust</text>
+    <text x="490" y="107" fill="#f5f7fa" font-size="26" font-weight="bold">7.2 °C</text>
 
     <rect x="170" y="310" width="260" height="210" fill="none" stroke="#d7dde5" stroke-width="6"/>
     <g transform="translate(200 485)" fill="#56b8ff">
@@ -27,48 +27,40 @@
       <circle r="2.5"/>
     </g>
     <rect x="444" y="378" width="96" height="68" rx="10" fill="#1b1b1b" stroke="#ff5964" stroke-width="2"/>
-    <g transform="translate(375 337) scale(1.3)" fill="none" stroke="#ff5964" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(375 392) scale(1.3)" fill="none" stroke="#ff5964" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M6 10C3 8 9 6 6 4M14 10C11 8 17 6 14 4M22 10C19 8 25 6 22 4"/>
       <rect x="1" y="14" width="25" height="12" rx="1.5"/>
       <path d="M7 15v10M13.5 15v10M20 15v10M5 29v-3M22 29v-3"/>
     </g>
-    <text x="492" y="405" fill="#ff5964" font-size="16">Heater</text>
-    <text x="492" y="431" fill="#f5f7fa" font-size="21" font-weight="bold">250 W</text>
+    <text x="492" y="405" fill="#ff5964" font-size="20">Heater</text>
+    <text x="492" y="431" fill="#f5f7fa" font-size="26" font-weight="bold">250 W</text>
 
-    <text x="96" y="476" fill="#f5f7fa" font-size="26" font-weight="bold">138 m³/h</text>
-    <text x="504" y="476" fill="#f5f7fa" font-size="26" font-weight="bold">159 m³/h</text>
+    <path d="M230 320v-8l-9 9 9 9v-7c5 0 9 4 9 9 0 2-.5 3.8-1.5 5.3l4.4 4.4A15 15 0 0 0 245 332c0-8.3-6.7-15-15-15zm0 24c-5 0-9-4-9-9 0-2 .5-3.8 1.5-5.3l-4.4-4.4A15 15 0 0 0 215 332c0 8.3 6.7 15 15 15v7l9-9-9-9z" fill="#43b4f5" transform="translate(70 45)"/>
+    <text x="300" y="348" fill="#f5f7fa" font-size="26" font-weight="bold">78 %</text>
 
-    <text x="150" y="660" fill="#c5ccd3" font-size="21">Extract</text>
-    <text x="150" y="694" fill="#f5f7fa" font-size="28">19.1 °C</text>
-    <text x="450" y="660" fill="#c5ccd3" font-size="21">Supply</text>
-    <text x="450" y="694" fill="#f5f7fa" font-size="28">18.0 °C</text>
+    <text x="120" y="476" fill="#f5f7fa" font-size="26" font-weight="bold">138 m³/h</text>
+    <text x="480" y="476" fill="#f5f7fa" font-size="26" font-weight="bold">159 m³/h</text>
+
+    <text x="150" y="660" fill="#c5ccd3" font-size="20">Extract</text>
+    <text x="150" y="694" fill="#f5f7fa" font-size="26" font-weight="bold">19.1 °C</text>
+    <text x="450" y="660" fill="#c5ccd3" font-size="20">Supply</text>
+    <text x="450" y="694" fill="#f5f7fa" font-size="26" font-weight="bold">18.0 °C</text>
 
     <g fill="none" stroke="#56b8ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
       <path d="M147 776V762a3 3 0 0 1 6 0v14a7 7 0 1 1-6 0z"/>
       <path d="M300 758c-4 6-8 11-8 15a8 8 0 0 0 16 0c0-4-4-9-8-15z"/>
-      <path d="M439 778c1-11 8-17 21-18-1 13-8 19-21 20zM440 779l14-14"/>
+      <rect x="438" y="758" width="24" height="22" rx="2"/>
+      <path d="M443 764h14M443 770h14M443 776h14"/>
     </g>
     <g fill="#c5ccd3" font-size="20">
       <text x="150" y="812">Panel</text>
       <text x="300" y="812">Humidity</text>
-      <text x="450" y="812">Air quality</text>
+      <text x="450" y="812">Filters</text>
     </g>
     <g fill="#f5f7fa" font-size="26" font-weight="bold">
       <text x="150" y="846">23.7 °C</text>
       <text x="300" y="846">40 %RH</text>
-      <text x="450" y="846">-- ppm</text>
-    </g>
-
-    <g fill="none" stroke="#56b8ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M139 930a12 12 0 0 1 20-8l2 2M161 922v7h-7M161 934a12 12 0 0 1-20 8l-2-2M139 942v-7h7"/>
-      <path d="M301 915l-9 16h8l-3 15 13-20h-8l4-11z" fill="#56b8ff" stroke="none"/>
-      <rect x="438" y="920" width="24" height="22" rx="2"/>
-      <path d="M443 926h14M443 932h14M443 938h14"/>
-    </g>
-    <g fill="#c5ccd3" font-size="17">
-      <text x="150" y="958">Heat recovery</text>
-      <text x="300" y="958">Power consumption</text>
-      <text x="450" y="958">Filters</text>
+      <text x="450" y="846">5 %</text>
     </g>
   </g>
 </svg>

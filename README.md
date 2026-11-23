@@ -7,7 +7,7 @@ Customizable Home Assistant Lovelace card for visualizing airflow through Komfov
 ## Features
 
 - House and heat-exchanger airflow diagram with separate fresh/exhaust air paths.
-- Configurable temperature, airflow, humidity, air-quality, filter, heat-recovery, and power entities.
+- Configurable temperature, airflow, humidity, heat-recovery, and filter entities.
 - Separate heater power readout.
 - Visual editor for entity selection and custom labels.
 - Labels default to English and can be changed to any language in the visual editor.
@@ -42,9 +42,7 @@ extract_flow: sensor.domekt_extract_airflow
 supply_flow: sensor.domekt_supply_airflow
 panel_temperature: sensor.domekt_panel_temperature
 humidity: sensor.domekt_humidity
-air_quality: sensor.domekt_air_quality
 heat_recovery: sensor.domekt_heat_recovery
-power: sensor.domekt_power
 heater_power: sensor.domekt_heater_power
 filter: sensor.domekt_filter_status
 ```
@@ -62,10 +60,7 @@ label_extract: Extract
 label_supply: Supply
 label_panel: Panel
 label_humidity: Humidity
-label_air_quality: Air quality
 label_heater: Heater
-label_heat_recovery: Heat recovery
-label_power: Power
 label_filter: Filters
 ```
 

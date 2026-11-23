@@ -83,9 +83,11 @@ class KomfoventDomektCard extends HTMLElement {
           font-family: inherit;
           text-anchor: middle;
         }
-        .label { fill: var(--secondary-text-color, #92999e); font-size: 16px; }
-        .reading { fill: var(--primary-text-color, #555b60); font-size: 21px; font-weight: 500; }
-        .flow-reading { font-size: 16px; font-weight: 600; }
+        .label { fill: var(--secondary-text-color, #92999e); font-size: 15px; }
+        .reading { fill: var(--primary-text-color, #555b60); font-size: 18px; font-weight: 600; }
+        .flow-reading { font-weight: 600; }
+        .recovery-reading { font-weight: 600; }
+        .recovery-icon { width: 5%; }
         .house, .floor, .core {
           fill: none;
           stroke: #d7dde5;
@@ -103,53 +105,24 @@ class KomfoventDomektCard extends HTMLElement {
           stroke-width: 1.5;
         }
         .heater-reading {
-          font-size: 15px;
-          font-weight: 700;
+          font-size: 18px;
+          font-weight: 600;
           text-anchor: start;
         }
         .heater-label {
           fill: var(--secondary-text-color, #92999e);
-          font-size: 11px;
+          font-size: 15px;
           text-anchor: start;
-        }
-        .metrics {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 2px;
-          margin-top: 0;
-        }
-        .metric {
-          min-width: 0;
-          padding: 4px 1px 1px;
-          text-align: center;
-        }
-        .metric-icon {
-          display: block;
-          width: 25px;
-          height: 25px;
-          margin: 0 auto 4px;
-          color: var(--primary-color, #315d96);
-          --mdc-icon-size: 100%;
-        }
-        .metric-label { color: var(--secondary-text-color, #92999e); font-size: 12px; }
-        .metric-value {
-          margin-top: 1px;
-          color: var(--primary-text-color, #555b60);
-          font-size: 16px;
-          font-weight: 600;
-          overflow-wrap: anywhere;
         }
         @media (max-width: 380px) {
           .content { padding: 8px 6px 10px; }
-          .flow-reading { font-size: 14px; }
-          .metric-label { font-size: 11px; }
-          .metric-value { font-size: 15px; }
         }
       </style>
       <ha-card>
         <div class="content">
           <div class="diagram-wrap">
-            <svg class="diagram" viewBox="0 30 440 640" role="img" aria-label="Komfovent airflow diagram">
+            <svg class="diagram" viewBox="0 30 440 622" role="img" aria-label="Komfovent airflow diagram">
+              <g transform="translate(0 -9)">
               <path class="house" d="M28 650V250L220 76 412 250V650"/>
               <path class="floor" d="M8 650H432"/>
 
@@ -161,7 +134,7 @@ class KomfoventDomektCard extends HTMLElement {
               <path class="arrowhead" d="M170 420L162 444L146 428Z M325 475L301 467L317 451Z" fill="#ff9b24"/>
 
               <rect class="core" x="125" y="215" width="190" height="155"/>
-              <g class="heater-symbol" transform="translate(277 278)" aria-hidden="true">
+              <g class="heater-symbol" transform="translate(277 286)" aria-hidden="true">
                 <path d="M6 8C3 6 9 4 6 2M14 8C11 6 17 4 14 2M22 8C19 6 25 4 22 2"/>
                 <rect x="1" y="12" width="25" height="12" rx="1.5"/>
                 <path d="M7 13v10M13.5 13v10M20 13v10M5 27v-3M22 27v-3"/>
@@ -170,6 +143,7 @@ class KomfoventDomektCard extends HTMLElement {
               <text class="heater-label" x="330" y="288" data-label="label_heater">Heater</text>
               <text class="reading heater-reading" x="330" y="311" data-value="heater_power">--</text>
 
+              <text class="reading recovery-reading" x="220" y="252" data-value="heat_recovery">--</text>
               <text class="label" x="82" y="54" data-label="label_outside">Fresh air</text>
               <text class="reading" x="82" y="80" data-value="outside_temperature">--</text>
               <text class="label" x="358" y="54" data-label="label_exhaust">Exhaust</text>
@@ -187,32 +161,16 @@ class KomfoventDomektCard extends HTMLElement {
               <text class="reading" x="100" y="615" data-value="panel_temperature">--</text>
               <text class="label" x="220" y="590" data-label="label_humidity">Humidity</text>
               <text class="reading" x="220" y="615" data-value="humidity">--</text>
-              <text class="label" x="340" y="590" data-label="label_air_quality">Air quality</text>
-              <text class="reading" x="340" y="615" data-value="air_quality">--</text>
+              <text class="label" x="340" y="590" data-label="label_filter">Filters</text>
+              <text class="reading" x="340" y="615" data-value="filter">--</text>
+              </g>
             </svg>
-            <ha-icon class="diagram-icon fan-icon" style="left:32.5%;top:47.7%" icon="mdi:fan" aria-hidden="true"></ha-icon>
-            <ha-icon class="diagram-icon fan-icon" style="left:67.5%;top:47.7%" icon="mdi:fan" aria-hidden="true"></ha-icon>
-            <ha-icon class="diagram-icon" style="left:22.7%;top:82.8%" icon="mdi:thermometer" aria-hidden="true"></ha-icon>
-            <ha-icon class="diagram-icon" style="left:50%;top:82.8%" icon="mdi:water-percent" aria-hidden="true"></ha-icon>
-            <ha-icon class="diagram-icon" style="left:77.3%;top:82.8%" icon="mdi:leaf" aria-hidden="true"></ha-icon>
-          </div>
-
-          <div class="metrics">
-            <div class="metric">
-              <ha-icon class="metric-icon" icon="mdi:autorenew" aria-hidden="true"></ha-icon>
-              <div class="metric-label" data-label="label_heat_recovery">Heat recovery</div>
-              <div class="metric-value" data-value="heat_recovery">--</div>
-            </div>
-            <div class="metric">
-              <ha-icon class="metric-icon" icon="mdi:flash" aria-hidden="true"></ha-icon>
-              <div class="metric-label" data-label="label_power">Power consumption</div>
-              <div class="metric-value" data-value="power">--</div>
-            </div>
-            <div class="metric">
-              <ha-icon class="metric-icon" icon="mdi:air-filter" aria-hidden="true"></ha-icon>
-              <div class="metric-label" data-label="label_filter">Filters</div>
-              <div class="metric-value" data-value="filter">--</div>
-            </div>
+            <ha-icon class="diagram-icon fan-icon" style="left:34.1%;top:47.6%" icon="mdi:fan" aria-hidden="true"></ha-icon>
+            <ha-icon class="diagram-icon fan-icon" style="left:65.9%;top:47.6%" icon="mdi:fan" aria-hidden="true"></ha-icon>
+            <ha-icon class="diagram-icon recovery-icon" style="left:50%;top:38.6%" icon="mdi:autorenew" aria-hidden="true"></ha-icon>
+            <ha-icon class="diagram-icon" style="left:22.7%;top:83.8%" icon="mdi:thermometer" aria-hidden="true"></ha-icon>
+            <ha-icon class="diagram-icon" style="left:50%;top:83.8%" icon="mdi:water-percent" aria-hidden="true"></ha-icon>
+            <ha-icon class="diagram-icon" style="left:77.3%;top:83.8%" icon="mdi:air-filter" aria-hidden="true"></ha-icon>
           </div>
         </div>
       </ha-card>
@@ -245,9 +203,7 @@ const ENTITY_FIELDS = [
   ["supply_flow", "Supply airflow"],
   ["panel_temperature", "Panel temperature"],
   ["humidity", "Humidity"],
-  ["air_quality", "Air quality"],
   ["heat_recovery", "Heat recovery"],
-  ["power", "Power consumption"],
   ["heater_power", "Heater power consumption"],
   ["filter", "Filter status"],
 ];
@@ -259,10 +215,7 @@ const DEFAULT_LABELS = {
   label_supply: "Supply",
   label_panel: "Panel",
   label_humidity: "Humidity",
-  label_air_quality: "Air quality",
   label_heater: "Heater",
-  label_heat_recovery: "Heat recovery",
-  label_power: "Power consumption",
   label_filter: "Filters",
 };
 
@@ -273,10 +226,7 @@ const LABEL_FIELDS = [
   ["label_supply", "Card label: supply"],
   ["label_panel", "Card label: panel"],
   ["label_humidity", "Card label: humidity"],
-  ["label_air_quality", "Card label: air quality"],
   ["label_heater", "Card label: heater"],
-  ["label_heat_recovery", "Card label: heat recovery"],
-  ["label_power", "Card label: power consumption"],
   ["label_filter", "Card label: filters"],
 ];
 
