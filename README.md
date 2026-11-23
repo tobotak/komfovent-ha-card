@@ -1,12 +1,36 @@
-# Karta Komfovent Domekt
+# Komfovent Domekt Card
 
-Niestandardowa karta Lovelace do Home Assistant, wzorowana na przesłanym schemacie wentylacji. Korzysta ze standardowych encji HA, więc można ją połączyć z sensorami udostępnionymi przez integrację Modbus.
+Customizable Home Assistant Lovelace card for visualizing airflow through Komfovent Domekt ventilation units. It works with entities from the Home Assistant Modbus integration; no specific Modbus configuration is required.
 
-## Instalacja
+![Komfovent Domekt Card preview](docs/preview.svg)
 
-1. Skopiuj `komfovent-domekt-card.js` do `/config/www/komfovent-domekt-card.js`.
-2. W Home Assistant dodaj zasób modułu JavaScript pod adresem `/local/komfovent-domekt-card.js` i wybierz typ **JavaScript Module**.
-3. Dodaj kartę z selektora kart dashboardu. W edytorze karty wybierz dostępne sensory. Możesz też użyć konfiguracji YAML:
+## Features
+
+- House and heat-exchanger airflow diagram with separate fresh/exhaust air paths.
+- Configurable temperature, airflow, humidity, air-quality, filter, heat-recovery, and power entities.
+- Separate heater power readout.
+- Visual editor for entity selection and custom labels.
+- Labels default to Polish and can be changed to any language.
+- Uses the Home Assistant theme and Material Design icons.
+
+## Installation with HACS
+
+This repository is installed as a custom HACS dashboard repository:
+
+1. In Home Assistant, open **HACS → ⋮ → Custom repositories**.
+2. Add `https://github.com/tobotak/komfovent-ha-card` and select the **Dashboard** category.
+3. Install **Komfovent Domekt Card** and reload the browser.
+4. Add the **Komfovent Domekt** card to a dashboard. Select the available entities in the visual editor.
+
+## Manual installation
+
+1. Copy `komfovent-ha-card.js` to `/config/www/komfovent-ha-card.js`.
+2. Add `/local/komfovent-ha-card.js` as a **JavaScript Module** resource in Home Assistant.
+3. Add a manual card with type `custom:komfovent-domekt-card`.
+
+## Configuration
+
+All entity fields are optional. Choose the sensors exposed by your Modbus setup in the card editor, or set them in YAML:
 
 ```yaml
 type: custom:komfovent-domekt-card
@@ -21,7 +45,30 @@ humidity: sensor.domekt_humidity
 air_quality: sensor.domekt_air_quality
 heat_recovery: sensor.domekt_heat_recovery
 power: sensor.domekt_power
+heater_power: sensor.domekt_heater_power
 filter: sensor.domekt_filter_status
 ```
 
-Powyższe identyfikatory encji są przykładowe. Zastąp je własnymi encjami lub wybierz sensory w edytorze karty. Wartość i jednostka są pobierane z encji; nieprzypisane, nieznane lub niedostępne encje są oznaczone `--`.
+The entity IDs above are examples. Values and units are read from the selected entities. Empty, unknown, or unavailable entities display `--`.
+
+### Custom labels
+
+Change labels in the visual editor, or override them in YAML. For example:
+
+```yaml
+label_outside: Outside
+label_exhaust: Exhaust
+label_extract: Extract
+label_supply: Supply
+label_panel: Panel
+label_humidity: Humidity
+label_air_quality: Air quality
+label_heater: Heater
+label_heat_recovery: Heat recovery
+label_power: Power
+label_filter: Filters
+```
+
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE).
