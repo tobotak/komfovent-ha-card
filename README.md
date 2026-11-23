@@ -8,7 +8,8 @@ Customizable Home Assistant Lovelace card for visualizing airflow through Komfov
 
 - House and heat-exchanger airflow diagram with separate fresh/exhaust air paths.
 - Configurable temperature, airflow, humidity, heat-recovery, and filter entities.
-- Separate heater power readout.
+- Heat-recovery efficiency appears with an icon between the blue airflow paths; filter status replaces air quality.
+- Heater power is shown separately. Total power consumption is not displayed.
 - Visual editor for entity selection and custom labels.
 - Labels default to English and can be changed to any language in the visual editor.
 - Uses the Home Assistant theme and Material Design icons.
@@ -48,6 +49,8 @@ filter: sensor.domekt_filter_status
 ```
 
 The entity IDs above are examples. Values and units are read from the selected entities. Empty, unknown, or unavailable entities display `--`.
+
+The `heat_recovery` value is shown as a percentage above the recovery icon, without a text label. The `filter` entity is shown in the bottom-right slot of the diagram. The card does not use a total power-consumption entity; `heater_power` remains available for the heater readout.
 
 ### Custom labels
 
