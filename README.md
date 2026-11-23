@@ -2,7 +2,7 @@
 
 Customizable Home Assistant Lovelace card for visualizing airflow through Komfovent Domekt ventilation units. It works with entities from the Home Assistant Modbus integration; no specific Modbus configuration is required.
 
-![Komfovent Domekt Card preview](docs/preview.svg)
+![Komfovent Domekt Card preview](docs/preview-card.svg)
 
 ## Features
 
