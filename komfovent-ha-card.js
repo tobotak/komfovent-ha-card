@@ -139,7 +139,7 @@ class KomfoventDomektCard extends HTMLElement {
                 <rect x="1" y="12" width="25" height="12" rx="1.5"/>
                 <path d="M7 13v10M13.5 13v10M20 13v10M5 27v-3M22 27v-3"/>
               </g>
-              <rect class="heater-badge" x="321" y="270" width="93" height="58" rx="7"/>
+              <rect class="heater-badge" x="321" y="270" width="80" height="58" rx="7"/>
               <text class="heater-label" x="330" y="288" data-label="label_heater">Heater</text>
               <text class="reading heater-reading" x="330" y="311" data-value="heater_power">--</text>
 
